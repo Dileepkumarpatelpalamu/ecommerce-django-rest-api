@@ -1,0 +1,76 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+*.mo
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Environment variables
+.env
+.env.*
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Django media and static files
+/media/
+/staticfiles/
+/static_root/
+/media_root/
+
+# PyCharm and VSCode
+.idea/
+.vscode/
+*.code-workspace
+
+# Pipenv / Poetry
+Pipfile.lock
+poetry.lock
+
+# Migrations (optional – only if auto-generated and you want to ignore them)
+# Comment this out if you want to track migrations
+# **/migrations/
+
+# MyPy
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+
+# Docker
+*.pid
+*.seed
+*.bak
+*.tar
+*.tar.gz
+*.tgz
+
+# Other system files
+.DS_Store
+Thumbs.db

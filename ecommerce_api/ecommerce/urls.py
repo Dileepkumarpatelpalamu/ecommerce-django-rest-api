@@ -1,0 +1,41 @@
+from django.urls import path
+from .views import (
+    RegisterView, LoginView, UserProfileView, AddressListCreateView, AddressDetailView,
+    WishlistListCreateView, WishlistDeleteView, CategoryListCreateView, CategoryDetailView,
+    CategorySearchView, ProductListCreateView, ProductDetailView, ProductSearchView,
+    ProductFilterByCategoryView, CartView, CartItemAddView, CartItemUpdateView,
+    CartItemDeleteView, CartClearView, CheckoutPreviewView, CheckoutValidateView,
+    CheckoutView, OrderListView, OrderDetailView, OrderCancelView, OrderReturnView,
+    OrderRefundView, OrderItemDetailView
+)
+
+urlpatterns = [
+    path('register/', RegisterView.as_view(), name='register'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('profile/', UserProfileView.as_view(), name='user-profile'),
+    path('addresses/', AddressListCreateView.as_view(), name='address-list-create'),
+    path('addresses/<int:pk>/', AddressDetailView.as_view(), name='address-detail'),
+    path('wishlist/', WishlistListCreateView.as_view(), name='wishlist-list-create'),
+    path('wishlist/<int:pk>/delete/', WishlistDeleteView.as_view(), name='wishlist-delete'),
+    path('categories/', CategoryListCreateView.as_view(), name='category-list-create'),
+    path('categories/<int:pk>/', CategoryDetailView.as_view(), name='category-detail'),
+    path('categories/search/', CategorySearchView.as_view(), name='category-search'),
+    path('products/', ProductListCreateView.as_view(), name='product-list-create'),
+    path('products/<int:pk>/', ProductDetailView.as_view(), name='product-detail'),
+    path('products/search/', ProductSearchView.as_view(), name='product-search'),
+    path('products/filter/', ProductFilterByCategoryView.as_view(), name='product-filter-by-category'),
+    path('cart/', CartView.as_view(), name='cart'),
+    path('cart/add/', CartItemAddView.as_view(), name='cart-item-add'),
+    path('cart/items/<int:item_id>/', CartItemUpdateView.as_view(), name='cart-item-update'),
+    path('cart/items/<int:pk>/delete/', CartItemDeleteView.as_view(), name='cart-item-delete'),
+    path('cart/clear/', CartClearView.as_view(), name='cart-clear'),
+    path('checkout/preview/', CheckoutPreviewView.as_view(), name='checkout-preview'),
+    path('checkout/validate/', CheckoutValidateView.as_view(), name='checkout-validate'),
+    path('checkout/', CheckoutView.as_view(), name='checkout'),
+    path('orders/history/', OrderListView.as_view(), name='order-history'),
+    path('orders/<int:pk>/', OrderDetailView.as_view(), name='order-detail'),
+    path('orders/<int:order_id>/cancel/', OrderCancelView.as_view(), name='order-cancel'),
+    path('orders/<int:order_id>/return/', OrderReturnView.as_view(), name='order-return'),
+    path('orders/<int:order_id>/refund/', OrderRefundView.as_view(), name='order-refund'),
+    path('orders/items/<int:pk>/', OrderItemDetailView.as_view(), name='order-item-detail'),
+]
